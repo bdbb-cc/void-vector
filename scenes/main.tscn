@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cbxa8jcmoe13q"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_ui.gd" id="1_main_ui"]
+[ext_resource type="Script" path="res://scripts/combat/combat_system.gd" id="2_combat_system"]
+
+[node name="Main" type="Node"]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="MainUI" type="Control" parent="UILayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_main_ui")
+
+[node name="CombatScene" type="Node2D" parent="."]
+visible = false
+z_index = -1
+script = ExtResource("2_combat_system")

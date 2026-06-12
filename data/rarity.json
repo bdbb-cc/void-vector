@@ -1,0 +1,45 @@
+{
+  "rarity_names": {
+    "0": "white",
+    "1": "green",
+    "2": "blue",
+    "3": "purple",
+    "4": "orange",
+    "5": "red"
+  },
+  "rarity_display_names": {
+    "white": "普通",
+    "green": "优秀",
+    "blue": "稀有",
+    "purple": "史诗",
+    "orange": "传说",
+    "red": "神话"
+  },
+  "rarity_colors": {
+    "white": "#808080",
+    "green": "#00FF00",
+    "blue": "#00FFFF",
+    "purple": "#EE82EE",
+    "orange": "#FFA500",
+    "red": "#FF0000"
+  },
+  "rarity_bonus_multipliers": {
+    "white": 1.0,
+    "green": 1.25,
+    "blue": 1.5,
+    "purple": 1.75,
+    "orange": 2.0,
+    "red": 2.5
+  },
+  "slot_display_names": {
+    "weapon": "武器",
+    "armor": "护甲",
+    "helmet": "头盔",
+    "boots": "鞋子",
+    "accessory_1": "饰品",
+    "accessory_2": "饰品",
+    "ring_1": "戒指",
+    "ring_2": "戒指",
+    "amulet": "项链"
+  }
+}

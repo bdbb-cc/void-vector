@@ -1,0 +1,98 @@
+{
+  "crit_damage": {
+    "id": "crit_damage_rune",
+    "name": "暴伤强化符文",
+    "description": "暴击伤害额外+50%，暴击时有15%概率再次触发暴击",
+    "color": "#FF0000",
+    "effects": {
+      "crit_damage_add": 0.5,
+      "crit_cascade_chance": 0.15
+    },
+    "compatible_skills": ["sky_slash", "lightning_chain", "death_mark"],
+    "rarity": "epic"
+  },
+  "ice_field": {
+    "id": "ice_field_rune",
+    "name": "寒冰领域符文",
+    "description": "冰系技能范围+40%，冻结时间+100%",
+    "color": "#00FFFF",
+    "effects": {
+      "ice_range_mult": 0.4,
+      "freeze_duration_mult": 2.0
+    },
+    "compatible_skills": ["frost_nova", "earthquake", "time_stop", "holy_smite"],
+    "rarity": "epic"
+  },
+  "lightning_boost": {
+    "id": "lightning_boost_rune",
+    "name": "雷电增幅符文",
+    "description": "闪电系技能伤害+40%，弹跳次数+2",
+    "color": "#FFFF00",
+    "effects": {
+      "lightning_dmg_mult": 0.4,
+      "chain_count_add": 2
+    },
+    "compatible_skills": ["lightning_chain", "wind_blade"],
+    "rarity": "rare"
+  },
+  "burn_enhance": {
+    "id": "burn_enhance_rune",
+    "name": "燃烧强化符文",
+    "description": "燃烧/毒素伤害+60%，持续时间+50%",
+    "color": "#FF4500",
+    "effects": {
+      "dot_dmg_mult": 0.6,
+      "dot_dur_mult": 1.5
+    },
+    "compatible_skills": ["flame_impact", "poison_cloud", "shadow_bolt"],
+    "rarity": "rare"
+  },
+  "reflect_counter": {
+    "id": "reflect_counter_rune",
+    "name": "反击符文",
+    "description": "受伤时反弹100%伤害，反伤必定暴击",
+    "color": "#8B008B",
+    "effects": {
+      "reflect_on_hit": true,
+      "reflect_always_crit": true
+    },
+    "compatible_skills": ["earthquake", "summon_wolf"],
+    "rarity": "legendary"
+  },
+  "vampiric": {
+    "id": "vampiric_rune",
+    "name": "吸血符文",
+    "description": "技能伤害的20%转化为生命值，击杀回复10%最大HP",
+    "color": "#8B0000",
+    "effects": {
+      "spell_lifesteal": 0.2,
+      "kill_heal": 0.1
+    },
+    "compatible_skills": ["shadow_bolt", "holy_smite", "poison_cloud", "summon_wolf"],
+    "rarity": "rare"
+  },
+  "rapid_fire": {
+    "id": "rapid_fire_rune",
+    "name": "连射符文",
+    "description": "投射物技能数量+2，攻击速度+30%",
+    "color": "#00FF00",
+    "effects": {
+      "projectile_add": 2,
+      "attack_speed_mult": 0.3
+    },
+    "compatible_skills": ["flame_impact", "wind_blade"],
+    "rarity": "epic"
+  },
+  "execution": {
+    "id": "execution_rune",
+    "name": "斩杀符文",
+    "description": "对低于40%HP敌人伤害+100%，斩杀线提升至35%",
+    "color": "#8B0000",
+    "effects": {
+      "low_hp_dmg_mult": 1.0,
+      "execute_threshold_add": 0.15
+    },
+    "compatible_skills": ["sky_slash", "frost_nova", "death_mark"],
+    "rarity": "legendary"
+  }
+}

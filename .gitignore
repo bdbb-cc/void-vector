@@ -1,0 +1,27 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Exported builds and export presets
+export/
+build/
+export_presets.cfg
+
+# Android build
+/android/
+
+# Imported translations (auto-generated)
+.translation/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE / Editor
+.vscode/
+.idea/
+.trae/
+.qoder/
+*.code-workspace

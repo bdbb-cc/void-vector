@@ -1,0 +1,17 @@
+{
+  "1": {"name": "初生灵能", "bullets": 1, "spread": 0, "cost": 0, "type": "laser", "color": "#33CCFF", "damage": 35},
+  "2": {"name": "双子星束", "bullets": 2, "spread": 8, "cost": 15, "type": "laser", "color": "#33FF80", "damage": 30},
+  "3": {"name": "虚空追猎者", "bullets": 2, "spread": 20, "cost": 50, "type": "homing", "color": "#FFCC33", "damage": 40},
+  "4": {"name": "重力坍缩", "bullets": 1, "spread": 0, "cost": 100, "type": "explosive", "color": "#CC33FF", "damage": 60},
+  "5": {"name": "虚空剑阵", "bullets": 3, "spread": 15, "cost": 200, "type": "pierce", "color": "#FFFFFF", "show_blade": true, "damage": 45},
+  "6": {"name": "中子长枪", "bullets": 1, "spread": 0, "cost": 350, "type": "beam", "color": "#FF3333", "speed_mod": 1.5, "damage": 80},
+  "7": {"name": "离子风暴", "bullets": 1, "spread": 0, "cost": 500, "type": "wave", "color": "#33FFFF", "speed_mod": 0.6, "damage": 50},
+  "8": {"name": "等离子散射", "bullets": 5, "spread": 30, "cost": 80, "type": "laser", "color": "#FF66FF", "damage": 20},
+  "9": {"name": "暗物质射线", "bullets": 1, "spread": 0, "cost": 150, "type": "beam", "color": "#6600CC", "speed_mod": 1.2, "damage": 70},
+  "10": {"name": "量子鱼雷", "bullets": 3, "spread": 10, "cost": 250, "type": "homing", "color": "#00FF99", "damage": 55},
+  "11": {"name": "超新星爆发", "bullets": 1, "spread": 0, "cost": 400, "type": "explosive", "color": "#FF9900", "damage": 100},
+  "12": {"name": "虚空裂隙", "bullets": 2, "spread": 5, "cost": 600, "type": "pierce", "color": "#CC00FF", "damage": 65},
+  "13": {"name": "反物质洪流", "bullets": 8, "spread": 45, "cost": 750, "type": "laser", "color": "#FF0066", "damage": 25},
+  "14": {"name": "奇点投射", "bullets": 1, "spread": 0, "cost": 900, "type": "explosive", "color": "#330033", "damage": 150},
+  "15": {"name": "终焉之光", "bullets": 1, "spread": 0, "cost": 1200, "type": "beam", "color": "#FFFFFF", "speed_mod": 2.0, "damage": 120}
+}

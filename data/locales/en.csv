@@ -1,0 +1,191 @@
+keys,en
+VOID_VECTOR,VOID VECTOR
+VOID_VECTOR_TERMINAL,VOID VECTOR TERMINAL 1.0
+START_GAME,Start Game
+TALENT_ALTAR,Talent Altar / UPGRADES
+WEAPON_BAY,Weapon Bay / WEAPONS
+SETTINGS,Settings
+LIFE_CORE,Life Core
+SPEED_SECRET,Speed Secret
+FIRE_OVERLOAD,Fire Overload
+UPGRADE,Upgrade
+COST,Cost
+CHAOS_STONES,Chaos Stones
+LEVEL,Level
+LEVEL_COMPLETE,Level Complete
+LEVEL_FAILED,Mission Failed
+GAME_OVER,Game Over
+RETURN_TO_MENU,Return to Menu
+PERK_SELECTION,Select Perk
+BOUNCY_MATRIX,Ricochet Matrix
+VOID_SHIELD,Void Shield
+OVERLOAD_PROTOCOL,Overload Protocol
+LIFE_DRAIN,Life Drain
+BULLETS_BOUNCE,Bullets bounce between obstacles
+AUTO_ROTATING,Auto-rotating protective blades
+FIRE_RATE_BOOST,Greatly increased fire rate
+RESTORE_HP,Instantly restore some HP
+BOSS_APPEARED,★ Boss Appeared!
+BOSS_DEFEATED,Boss Defeated!
+WAVE,Wave
+WAVE_COMPLETE,Wave Complete
+LEVEL_PROGRESS,Level Progress
+KILLS,Kills
+TIME,Time
+STONES,Stones
+NORMAL,Common
+EXCELLENT,Uncommon
+RARE,Rare
+EPIC,Epic
+LEGENDARY,Legendary
+MYTHIC,Mythic
+WEAPON,Weapon
+ARMOR,Armor
+HELMET,Helmet
+BOOTS,Boots
+ACCESSORY,Accessory
+RING,Ring
+AMULET,Amulet
+EQUIPMENT,Equipment
+BAG,Bag
+SKILLS,Skills
+SKILL,Skill
+FLAME_IMPACT,Flame Impact
+LIGHTNING_CHAIN,Lightning Chain
+FROST_NOVA,Frost Nova
+SKY_SLASH,Sky Slash
+SHADOW_BOLT,Shadow Bolt
+HOLY_SMITE,Holy Smite
+POISON_CLOUD,Poison Cloud
+EARTHQUAKE,Earthquake
+WIND_BLADE,Wind Blade
+SUMMON_WOLF,Summon Wolf
+TIME_STOP,Time Stop
+DEATH_MARK,Death Mark
+OFFLINE_REWARD,Offline Reward
+WELCOME_BACK,Welcome Back!
+OFFLINE_DURATION,Offline Duration
+GAINED,Gained
+RESUME,Resume
+WATCH_AD,Watch Ad (Revive)
+REVIVE,Revive
+SHIP_CORE_SPECS,Starship Core Specs
+HP_LABEL,HP
+SPEED_LABEL,Cruise Speed
+FIRE_RATE_LABEL,Fire Rate Multiplier
+SAVE_DATA,Save Data
+LOAD_DATA,Load Data
+NO_SAVE,No Save
+SAVE_TIME,Save Time
+DELETE_SAVE,Delete Save
+CONFIRM_DELETE,Confirm delete save?
+PAUSE,Pause
+VICTORY,Victory
+BOSS_WAVE,BOSS Wave
+GENESIS_NEBULA,Genesis Nebula
+CHARGE_NEBULA,Charge Nebula
+EVENT_HORIZON,Event Horizon
+ION_STORM,Ion Storm
+DARK_MATTER_CORRIDOR,Dark Matter Corridor
+QUANTUM_RIFT,Quantum Rift
+PULSAR_DOMAIN,Pulsar Domain
+ANTIMATTER_VORTEX,Antimatter Vortex
+NEUTRON_RUINS,Neutron Ruins
+ABYSSAL_VOID,Abyssal Void
+SUPERNOVA_REMNANT,Supernova Remnant
+GRAVITY_LENS,Gravity Lens
+DARK_ENERGY_TIDE,Dark Energy Tide
+MAGNETIC_STORM_CORRIDOR,Magnetic Storm Corridor
+SPACETIME_FAULT,Spacetime Fault
+DIMENSIONAL_FRACTURE,Dimensional Fracture
+SINGULARITY_CORE,Singularity Core
+ENTROPY_DOMAIN,Entropy Domain
+CHAOS_FRONTIER,Chaos Frontier
+VOID_THRONE,Void Throne
+PATROL_DRONE,Patrol Drone
+RANGED_SENTINEL,Ranged Sentinel
+HEAVY_GUARD,Heavy Guard
+SWARM_UNIT,Swarm Unit
+ELITE_SNIPER,Elite Sniper
+SHIELD_BEARER,Shield Bearer
+BOMBER_DRONE,Bomber Drone
+REPAIR_UNIT,Repair Unit
+PHASE_SHIFTER,Phase Shifter
+VOID_SENTINEL_BOSS,Void Sentinel
+QUANTUM_HYDRA,Quantum Hydra
+CHRONOS_DEVOURER,Chronos Devourer
+ABYSS_EMPEROR,Abyss Emperor
+NEBULA_PHANTOM,Nebula Phantom
+PIERCE_ROUND,Armor Piercing
+SPLIT_BARRAGE,Split Barrage
+CRIT_CHIP,Crit Chip
+POWER_AMPLIFIER,Power Amplifier
+RANGE_EXTENSION,Range Extension
+COMBO_PROTOCOL,Combo Protocol
+CHARGE_SHOT,Charge Shot
+HOMING_BOOST,Homing Boost
+ENERGY_SHIELD,Energy Shield
+NANO_ARMOR,Nano Armor
+EVASION_ENGINE,Evasion Engine
+FORCE_REFLECT,Force Reflect
+HP_EXPANSION,HP Expansion
+NANO_REPAIR,Nano Repair
+TEMPORAL_DODGE,Temporal Dodge
+WARP_ENGINE,Warp Engine
+GRAVITY_PULL,Gravity Pull
+XP_ACCELERATOR,XP Accelerator
+WEALTH_PROTOCOL,Wealth Protocol
+COOLDOWN_COMPRESS,Cooldown Compress
+DRONE_SUMMON,Drone Summon
+BULLET_MATRIX,Bullet Matrix
+LUCK_MODULE,Luck Module
+REVIVAL_PROTOCOL,Revival Protocol
+BERSERK_MODE,Berserk Mode
+TIME_DILATION,Time Dilation
+CHAOS_POWER,Chaos Power
+PIERCE_DESC,Bullets pierce through one additional enemy
+SPLIT_BARRAGE_DESC,Fire 2 extra bullets per shot
+CRIT_CHIP_DESC,Crit rate +15%, Crit damage +50%
+POWER_AMPLIFIER_DESC,All damage +20%
+RANGE_EXTENSION_DESC,Attack range +30%
+COMBO_PROTOCOL_DESC,Consecutive hits on same enemy increase damage
+CHARGE_SHOT_DESC,After 1s without firing, next shot deals x3 damage
+HOMING_BOOST_DESC,All bullets gain slight homing ability
+ENERGY_SHIELD_DESC,Gain a shield every 30s that blocks one attack
+NANO_ARMOR_DESC,Reduce all damage taken by 15%
+EVASION_ENGINE_DESC,10% chance to completely dodge attacks
+FORCE_REFLECT_DESC,Reflect 30% damage back to attacker
+HP_EXPANSION_DESC,Max HP +25%
+NANO_REPAIR_DESC,Recover 1% max HP per second
+TEMPORAL_DODGE_DESC,0.5s invincibility after taking damage
+WARP_ENGINE_DESC,Move speed +20%
+GRAVITY_PULL_DESC,Pickup range +100%
+XP_ACCELERATOR_DESC,Experience gained +30%
+WEALTH_PROTOCOL_DESC,Chaos Stone drops +50%
+COOLDOWN_COMPRESS_DESC,Skill cooldown -20%
+DRONE_SUMMON_DESC,Summon an auto-attacking drone
+BULLET_MATRIX_DESC,Fire bullets in all directions every 3s
+LUCK_MODULE_DESC,Higher quality equipment drop rate +20%
+REVIVAL_PROTOCOL_DESC,Auto-revive once on death, recover 50% HP
+BERSERK_MODE_DESC,Damage +100% when HP below 30%
+TIME_DILATION_DESC,Nearby enemies move 25% slower
+CHAOS_POWER_DESC,All stats +10%, but damage taken +10%
+PRIMORDIAL_PSIONIC,Primordial Psionic
+TWIN_STAR_BEAM,Twin Star Beam
+VOID_HUNTER,Void Hunter
+GRAVITY_COLLAPSE,Gravity Collapse
+VOID_BLADE_ARRAY,Void Blade Array
+NEUTRON_LANCE,Neutron Lance
+PLASMA_SCATTER,Plasma Scatter
+DARK_MATTER_RAY,Dark Matter Ray
+QUANTUM_TORPEDO,Quantum Torpedo
+SUPERNOVA_BURST,Supernova Burst
+VOID_RIFT,Void Rift
+ANTIMATTER_TORRENT,Antimatter Torrent
+SINGULARITY_PROJECTOR,Singularity Projector
+LIGHT_OF_ENDING,Light of Ending
+ATTACK_BOOST,Attack Boost
+DEFENSE_MATRIX,Defense Matrix
+CRIT_MODULE,Crit Module
+GRAVITY_FIELD,Gravity Field
+LUCKY_STAR,Lucky Star

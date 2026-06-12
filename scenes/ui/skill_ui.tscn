@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8c9d0e1f2g3h4"]
+
+[ext_resource type="Script" path="res://scripts/ui/skill_ui.gd" id="1_skill"]
+
+[node name="SkillUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_skill")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_left = 15.0
+offset_top = 55.0
+offset_right = -15.0
+offset_bottom = -8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+
+[node name="SkillScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+
+[node name="SkillGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/SkillScrollContainer"]
+columns = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+
+[node name="DetailsPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel"]
+
+[node name="SkillName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer"]
+text = ""
+
+[node name="SkillDesc" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer"]
+autowrap_mode = 1
+text = ""
+
+[node name="SkillLevel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer"]
+text = ""
+
+[node name="SkillStats" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(280, 250)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer"]
+
+[node name="EquipButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer/HBoxContainer"]
+text = "装备技能"
+
+[node name="UpgradeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/DetailsPanel/VBoxContainer/HBoxContainer"]
+text = "进阶"
+
+[node name="RunePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RunePanel"]
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer"]
+text = "关闭"

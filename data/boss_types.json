@@ -1,0 +1,7 @@
+[
+  {"id": "void_sentinel", "name": "虚空哨兵", "base_hp": 500, "base_attack": 25, "base_defense": 5, "move_speed": 80, "attack_power": 25, "exp_reward": 100, "gold_reward": 50, "drop_chance": 1.0, "phases": 2, "special_attacks": ["laser_sweep", "shield_bash"]},
+  {"id": "quantum_hydra", "name": "量子九头蛇", "base_hp": 800, "base_attack": 20, "base_defense": 3, "move_speed": 100, "attack_power": 20, "exp_reward": 200, "gold_reward": 100, "drop_chance": 1.0, "phases": 3, "special_attacks": ["split", "quantum_bolt", "regenerate"]},
+  {"id": "chronos_devourer", "name": "时空吞噬者", "base_hp": 1200, "base_attack": 30, "base_defense": 8, "move_speed": 70, "attack_power": 30, "exp_reward": 350, "gold_reward": 180, "drop_chance": 1.0, "phases": 3, "special_attacks": ["time_dilation", "temporal_rift", "age_accelerate"]},
+  {"id": "abyss_emperor", "name": "深渊皇帝", "base_hp": 2000, "base_attack": 40, "base_defense": 12, "move_speed": 90, "attack_power": 40, "exp_reward": 500, "gold_reward": 300, "drop_chance": 1.0, "phases": 4, "special_attacks": ["void_collapse", "dimension_rift", "summon_minions", "absolute_zero"]},
+  {"id": "nebula_phantom", "name": "星云幻影", "base_hp": 600, "base_attack": 22, "base_defense": 2, "move_speed": 130, "attack_power": 22, "exp_reward": 150, "gold_reward": 80, "drop_chance": 1.0, "phases": 2, "special_attacks": ["clone", "nebula_burst", "vanish"]}
+]

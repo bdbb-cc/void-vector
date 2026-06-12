@@ -1,0 +1,22 @@
+{
+  "1": {"name": "初生星域", "goal_type": "kills", "goal_value": 30, "spawn_rate": 1.8},
+  "2": {"name": "电荷星云", "goal_type": "time", "goal_value": 60, "spawn_rate": 1.5},
+  "3": {"name": "黑洞边缘", "goal_type": "stones", "goal_value": 15, "spawn_rate": 1.2},
+  "4": {"name": "离子风暴", "goal_type": "kills", "goal_value": 50, "spawn_rate": 1.3},
+  "5": {"name": "暗物质走廊", "goal_type": "survive", "goal_value": 90, "spawn_rate": 1.0, "boss_id": "void_sentinel"},
+  "6": {"name": "量子裂隙", "goal_type": "kills", "goal_value": 60, "spawn_rate": 1.1},
+  "7": {"name": "脉冲星域", "goal_type": "time", "goal_value": 120, "spawn_rate": 0.9},
+  "8": {"name": "反物质涡流", "goal_type": "stones", "goal_value": 30, "spawn_rate": 0.8},
+  "9": {"name": "中子废墟", "goal_type": "kills", "goal_value": 80, "spawn_rate": 0.9},
+  "10": {"name": "虚空深渊", "goal_type": "survive", "goal_value": 150, "spawn_rate": 0.7, "boss_id": "quantum_hydra"},
+  "11": {"name": "超新星残骸", "goal_type": "kills", "goal_value": 100, "spawn_rate": 0.8},
+  "12": {"name": "引力透镜", "goal_type": "time", "goal_value": 180, "spawn_rate": 0.7},
+  "13": {"name": "暗能量潮汐", "goal_type": "stones", "goal_value": 50, "spawn_rate": 0.6},
+  "14": {"name": "磁暴回廊", "goal_type": "kills", "goal_value": 120, "spawn_rate": 0.7},
+  "15": {"name": "时空断层", "goal_type": "survive", "goal_value": 210, "spawn_rate": 0.5, "boss_id": "chronos_devourer"},
+  "16": {"name": "维度裂缝", "goal_type": "kills", "goal_value": 150, "spawn_rate": 0.6},
+  "17": {"name": "奇点核心", "goal_type": "time", "goal_value": 240, "spawn_rate": 0.5},
+  "18": {"name": "熵增领域", "goal_type": "stones", "goal_value": 80, "spawn_rate": 0.4},
+  "19": {"name": "混沌边境", "goal_type": "kills", "goal_value": 200, "spawn_rate": 0.5},
+  "20": {"name": "虚空王座", "goal_type": "survive", "goal_value": 300, "spawn_rate": 0.3, "boss_id": "abyss_emperor"}
+}

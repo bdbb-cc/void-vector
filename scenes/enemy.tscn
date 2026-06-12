@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://d8e9f0g1h2i3j4"]
+
+[ext_resource type="Script" path="res://scripts/combat/enemy.gd" id="1_enemy"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_enemy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = null  # TODO: 添加敌人精灵图
+modulate = Color.DARK_RED
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_enemy")
+
+[node name="HPBarContainer" type="Control" parent="."]
+offset_left = -25.0
+offset_top = -35.0
+offset_right = 25.0
+offset_bottom = -25.0
+
+[node name="HPBar" type="ProgressBar" parent="./HPBarContainer"]
+offset_right = 50.0
+offset_bottom = 10.0
+value = 50.0
+show_percentage = false
+tint_progress = Color.DARK_RED
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
+radius = 14.0

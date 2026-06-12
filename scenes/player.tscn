@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1d2e3f4g5h6i7"]
+
+[ext_resource type="Script" path="res://scripts/combat/player.gd" id="1_player"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("1_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = null  # TODO: 添加英雄精灵图
+modulate = Color.GOLD
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_player")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="HPBarContainer" type="Control" parent="."]
+offset_left = -30.0
+offset_top = -45.0
+offset_right = 30.0
+offset_bottom = -35.0
+
+[node name="HPBar" type="ProgressBar" parent="./HPBarContainer"]
+offset_right = 60.0
+offset_bottom = 10.0
+value = 100.0
+show_percentage = false
+tint_progress = Color.RED
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
+radius = 16.0

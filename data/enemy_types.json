@@ -1,0 +1,11 @@
+[
+  {"id": "drone", "name": "巡逻无人机", "base_hp": 40, "base_attack": 8, "base_defense": 0, "move_speed": 150, "attack_power": 8, "exp_reward": 5, "gold_reward": 3, "drop_chance": 0.2, "behavior": "melee"},
+  {"id": "ranger", "name": "远程哨兵", "base_hp": 30, "base_attack": 12, "base_defense": 0, "move_speed": 100, "attack_power": 12, "exp_reward": 8, "gold_reward": 5, "drop_chance": 0.25, "behavior": "ranged"},
+  {"id": "tank", "name": "重装守卫", "base_hp": 120, "base_attack": 6, "base_defense": 3, "move_speed": 60, "attack_power": 15, "exp_reward": 15, "gold_reward": 8, "drop_chance": 0.35, "behavior": "melee"},
+  {"id": "swarm", "name": "虫群单位", "base_hp": 15, "base_attack": 4, "base_defense": 0, "move_speed": 200, "attack_power": 4, "exp_reward": 2, "gold_reward": 1, "drop_chance": 0.1, "behavior": "melee"},
+  {"id": "elite_ranger", "name": "精英狙击手", "base_hp": 60, "base_attack": 20, "base_defense": 1, "move_speed": 90, "attack_power": 20, "exp_reward": 20, "gold_reward": 12, "drop_chance": 0.4, "behavior": "ranged"},
+  {"id": "shield_bearer", "name": "护盾携带者", "base_hp": 80, "base_attack": 5, "base_defense": 8, "move_speed": 70, "attack_power": 10, "exp_reward": 12, "gold_reward": 7, "drop_chance": 0.3, "behavior": "melee"},
+  {"id": "bomber", "name": "自爆无人机", "base_hp": 25, "base_attack": 30, "base_defense": 0, "move_speed": 180, "attack_power": 30, "exp_reward": 10, "gold_reward": 6, "drop_chance": 0.15, "behavior": "suicide"},
+  {"id": "healer", "name": "修复单元", "base_hp": 50, "base_attack": 0, "base_defense": 1, "move_speed": 110, "attack_power": 0, "exp_reward": 15, "gold_reward": 10, "drop_chance": 0.35, "behavior": "support"},
+  {"id": "phase_shifter", "name": "相位漂移者", "base_hp": 45, "base_attack": 15, "base_defense": 0, "move_speed": 160, "attack_power": 15, "exp_reward": 18, "gold_reward": 11, "drop_chance": 0.3, "behavior": "melee"}
+]

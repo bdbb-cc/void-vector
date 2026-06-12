@@ -1,0 +1,25 @@
+{
+  "offensive": [
+    {"id": "atk_flat_1", "name": "火力 +2-5", "stat": "attack", "min_val": 2, "max_val": 5, "is_percent": false, "weight": 100},
+    {"id": "atk_flat_2", "name": "火力 +6-12", "stat": "attack", "min_val": 6, "max_val": 12, "is_percent": false, "weight": 80},
+    {"id": "atk_pct_1", "name": "火力 +2%-5%", "stat": "attack", "min_val": 2, "max_val": 5, "is_percent": true, "weight": 90},
+    {"id": "crit_rate_1", "name": "暴击率 +1%-3%", "stat": "crit_rate", "min_val": 1, "max_val": 3, "is_percent": true, "weight": 100},
+    {"id": "crit_dmg_1", "name": "暴击伤害 +10%-20%", "stat": "crit_damage", "min_val": 10, "max_val": 20, "is_percent": true, "weight": 95},
+    {"id": "atk_spd_1", "name": "射速 +3%-8%", "stat": "attack_speed", "min_val": 3, "max_val": 8, "is_percent": true, "weight": 90}
+  ],
+  "defensive": [
+    {"id": "def_flat_1", "name": "护盾 +2-5", "stat": "defense", "min_val": 2, "max_val": 5, "is_percent": false, "weight": 100},
+    {"id": "hp_flat_1", "name": "结构完整度 +15-40", "stat": "max_hp", "min_val": 15, "max_val": 40, "is_percent": false, "weight": 100},
+    {"id": "hp_pct_1", "name": "结构完整度 +2%-5%", "stat": "max_hp", "min_val": 2, "max_val": 5, "is_percent": true, "weight": 90}
+  ],
+  "elemental": [
+    {"id": "fire_dmg_1", "name": "等离子伤害 +4%-10%", "stat": "fire_damage", "min_val": 4, "max_val": 10, "is_percent": true, "weight": 90},
+    {"id": "ice_dmg_1", "name": "低温伤害 +4%-10%", "stat": "ice_damage", "min_val": 4, "max_val": 10, "is_percent": true, "weight": 90},
+    {"id": "light_dmg_1", "name": "电弧伤害 +4%-10%", "stat": "lightning_damage", "min_val": 4, "max_val": 10, "is_percent": true, "weight": 90}
+  ],
+  "special": [
+    {"id": "life_steal_1", "name": "能量汲取 +0.5%-1.5%", "stat": "life_steal", "min_val": 0.5, "max_val": 1.5, "is_percent": true, "weight": 80},
+    {"id": "cdr_1", "name": "冷却缩减 +3%-8%", "stat": "cooldown_reduction", "min_val": 3, "max_val": 8, "is_percent": true, "weight": 80},
+    {"id": "move_spd_1", "name": "推进速度 +5%-10%", "stat": "move_speed", "min_val": 5, "max_val": 10, "is_percent": true, "weight": 85}
+  ]
+}

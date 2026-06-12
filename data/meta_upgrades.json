@@ -1,0 +1,10 @@
+{
+  "max_hp": {"name": "生命核心", "level": 0, "max_level": 5, "base_cost": 10, "base_value": 200, "per_level": 40},
+  "speed": {"name": "神行秘法", "level": 0, "max_level": 5, "base_cost": 15, "base_value": 520, "per_level": 45},
+  "fire_rate": {"name": "火力超载", "level": 0, "max_level": 5, "base_cost": 20, "base_value": 1.0, "per_level": 0.2},
+  "attack": {"name": "攻击强化", "level": 0, "max_level": 5, "base_cost": 20, "base_value": 35, "per_level": 5},
+  "defense": {"name": "防御矩阵", "level": 0, "max_level": 5, "base_cost": 15, "base_value": 0, "per_level": 2},
+  "crit_rate": {"name": "暴击模块", "level": 0, "max_level": 5, "base_cost": 25, "base_value": 0.05, "per_level": 0.03},
+  "pickup_range": {"name": "引力场", "level": 0, "max_level": 3, "base_cost": 10, "base_value": 50, "per_level": 25},
+  "luck": {"name": "幸运星", "level": 0, "max_level": 3, "base_cost": 30, "base_value": 0, "per_level": 0.1}
+}

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dgfx6bwrmiure"]
+
+[ext_resource type="Script" path="res://scripts/combat/boss.gd" id="1_boss"]
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_boss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)  # Boss比普通敌人更大
+texture = null  # TODO: 添加Boss精灵图
+modulate = Color.PURPLE
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_boss")
+
+[node name="HPBarContainer" type="Control" parent="."]
+offset_left = -40.0
+offset_top = -55.0
+offset_right = 40.0
+offset_bottom = -40.0
+
+[node name="HPBar" type="ProgressBar" parent="./HPBarContainer"]
+offset_right = 80.0
+offset_bottom = 15.0
+value = 500.0
+show_percentage = false
+tint_progress = Color.PURPLE
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boss"]
+radius = 24.0
