@@ -123,7 +123,10 @@ func _refresh_all():
 	if not _gm: return
 	_update_talents(); _update_weapons()
 	var s = _gm.get_boosted_stats()
-	stats_label.text = "\n星舰核心参数\n生命能: %d | 巡航速: %d | 火力倍率: %.1fx\n" % [s.get("hp", 200), s.get("speed", 520), s.get("fire_rate", 1.0)]
+	stats_label.text = "\n星舰核心参数\n生命能: %d | 巡航速: %d | 火力倍率: %.1fx\n攻击力: %d | 防御力: %d | 暴击率: %.0f%%\n" % [
+		s.get("hp", 200), s.get("speed", 520), s.get("fire_rate", 1.0),
+		s.get("attack", 35), s.get("defense", 0), s.get("crit_rate", 0.05) * 100.0
+	]
 	shard_label.text = "可用混沌碎片: %d" % _gm.chaos_stones
 
 func _update_talents():
@@ -266,12 +269,22 @@ func _create_settings_panel() -> void:
 	var particles_cb = CheckBox.new()
 	particles_cb.text = "粒子效果"
 	particles_cb.button_pressed = true
+	particles_cb.toggled.connect(func(enabled):
+		var vfx = get_node_or_null("/root/VisualEffects")
+		if vfx and "particles_enabled" in vfx:
+			vfx.particles_enabled = enabled
+	)
 	vbox.add_child(particles_cb)
 
 	# 画质设置：Bloom 开关
 	var bloom_cb = CheckBox.new()
 	bloom_cb.text = "Bloom 效果"
 	bloom_cb.button_pressed = true
+	bloom_cb.toggled.connect(func(enabled):
+		var vfx = get_node_or_null("/root/VisualEffects")
+		if vfx and vfx.has_method("set_bloom_enabled"):
+			vfx.set_bloom_enabled(enabled)
+	)
 	vbox.add_child(bloom_cb)
 
 	# 语言选择

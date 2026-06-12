@@ -11,6 +11,7 @@ var skill_cooldowns: Dictionary = {}
 var is_enraged: bool = false
 var summon_count: int = 0
 var max_summons: int = 3
+var _entrance_slowed: bool = false  # 入场慢动作是否仍在持续
 
 # _gm, target_player, attack_power, base_hp, base_attack, base_defense, exp_reward, gold_reward,
 # drop_chance, max_hp, enemy_name, is_boss, original_color 已在父类 Enemy 中声明
@@ -50,9 +51,12 @@ func _ready() -> void:
 func _play_entrance_animation() -> void:
 	## Boss出场动画 — 慢动作 + 从上方滑入 + 名称展示 + 冲击波
 	# 慢动作0.3秒
+	_entrance_slowed = true
 	Engine.time_scale = 0.3
 	get_tree().create_timer(0.3 * 0.3).timeout.connect(func():
-		Engine.time_scale = 1.0
+		if is_instance_valid(self):
+			Engine.time_scale = 1.0
+			_entrance_slowed = false
 	)
 
 	# 从上方滑入
@@ -455,6 +459,10 @@ func _trigger_screen_shake_on_player(intensity: float) -> void:
 
 func _die() -> void:
 	## Boss死亡
+	# 安全恢复 time_scale（防止入场动画期间被击杀导致全局慢动作）
+	if _entrance_slowed:
+		Engine.time_scale = 1.0
+		_entrance_slowed = false
 	# 清理 SummonTimer
 	var summon_timer = get_node_or_null("SummonTimer")
 	if summon_timer:

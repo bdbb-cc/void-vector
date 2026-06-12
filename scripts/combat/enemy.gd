@@ -98,7 +98,7 @@ func _initialize_stats() -> void:
 	if loader:
 		var enemy_types = loader.get_config("enemy_types")
 		if enemy_types is Array and not enemy_types.is_empty():
-			var type_data = enemy_types[0]  # 默认使用第一个敌人类型
+			var type_data = enemy_types[randi() % enemy_types.size()]  # 随机选择敌人类型
 			base_hp = float(type_data.get("base_hp", base_hp))
 			base_attack = float(type_data.get("base_attack", base_attack))
 			base_defense = float(type_data.get("base_defense", base_defense))

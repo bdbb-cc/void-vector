@@ -3,6 +3,20 @@ extends CharacterBody2D
 
 signal player_died()
 
+# ==================== 常量定义 ====================
+const BASE_DAMAGE := 35.0          # 基础攻击力
+const DASH_SPEED := 1100.0         # 冲刺速度
+const DASH_DURATION := 0.2         # 冲刺持续时间（秒）
+const DASH_COOLDOWN := 0.5         # 冲刺冷却（秒）
+const ENEMY_SEARCH_RANGE := 600.0  # 自动瞄准搜索范围（像素）
+const REGEN_RATE := 0.01           # 每秒回复最大HP比例
+const BULLET_SPEED := 950.0        # 默认子弹速度
+const BULLET_SPEED_EXTENDED := 1200.0  # 射程天赋子弹速度
+const BULLET_HELL_DAMAGE := 15.0   # 弹幕矩阵单发伤害
+const BULLET_HELL_SPEED := 600.0   # 弹幕矩阵子弹速度
+const XP_BASE := 10.0             # 升级所需基础经验
+const XP_GROWTH := 1.4            # 升级经验增长系数
+
 # ==================== 状态参数 ====================
 var weapon_data: Dictionary
 var move_speed := 520.0; var fire_rate := 1.0
@@ -53,6 +67,7 @@ var has_bouncy := false; var orbiter_count := 0
 var last_auto_time := 0.0; var is_dashing := false; var can_dash := true
 var _last_mouse_pos := Vector2.ZERO
 var _mouse_move_threshold := 3.0  # 鼠标移动阈值（像素）
+var _virtual_input := Vector2.ZERO  # 虚拟摇杆输入方向
 
 var visual_container: Node2D; var weapon_pivot: Node2D; var orbiter_pivot: Node2D
 var _gm: Node
@@ -64,6 +79,10 @@ func _ready() -> void:
 	_setup_visual_stack()
 	# 初次刷新
 	refresh_stats()
+
+func set_virtual_input(direction: Vector2) -> void:
+	## 接收虚拟摇杆输入（由 virtual_joystick.gd 调用）
+	_virtual_input = direction
 
 # ==================== 核心修复：属性即时同步 ====================
 func refresh_stats():
@@ -83,11 +102,14 @@ func refresh_stats():
 	elif current_hp > max_hp:
 		current_hp = max_hp
 	move_speed = boosted.speed; fire_rate = boosted.fire_rate
+	base_attack_boost = boosted.attack - 35.0  # 35.0 为基础攻击力
+	base_defense_boost = boosted.defense
+	crit_rate_boost = boosted.crit_rate - 0.05  # 0.05 为基础暴击率
 
 	# 同步局内等级与天赋 (跨关卡继承)
 	current_level = _gm.run_stats.level
 	current_xp = _gm.run_stats.xp
-	xp_to_next_level = 10.0 * pow(1.4, current_level - 1)
+	xp_to_next_level = XP_BASE * pow(XP_GROWTH, current_level - 1)
 
 	# 清理并重新应用已激活天赋 (防止重复叠加)
 	_reset_perk_states()
@@ -172,6 +194,9 @@ func _physics_process(delta: float) -> void:
 	if not is_alive: return
 	if Input.is_action_just_pressed("dash") and can_dash and not is_dashing: _perform_dash()
 	var input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	# 键盘无输入时，使用虚拟摇杆输入（移动端）
+	if input.length() < 0.1 and _virtual_input.length() > 0.1:
+		input = _virtual_input
 	# 手柄右摇杆瞄准
 	var aim_input = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 	if not is_dashing:
@@ -204,7 +229,7 @@ func _physics_process(delta: float) -> void:
 	if _invincible_timer > 0: _invincible_timer -= delta
 	if has_charge_shot: _charge_shot_timer += delta
 	if has_shield: _shield_timer += delta
-	if has_regen: current_hp = min(max_hp, current_hp + max_hp * 0.01 * delta)
+	if has_regen: current_hp = min(max_hp, current_hp + max_hp * REGEN_RATE * delta)
 	if has_bullet_hell:
 		_bullet_hell_timer += delta
 		if _bullet_hell_timer >= 3.0:
@@ -232,7 +257,7 @@ func _shoot_logic():
 	if has_berserk and current_hp < max_hp * 0.3: dmg_mult *= 2.0
 	# 混沌之力天赋
 	if has_chaos_power: dmg_mult *= 1.1
-	var base_damage = 35.0 * dmg_mult + base_attack_boost
+	var base_damage = BASE_DAMAGE * dmg_mult + base_attack_boost
 	for i in range(bullets):
 		var angle_offset = 0.0
 		if bullets > 1: angle_offset = deg_to_rad(lerp(-spread_deg, spread_deg, float(i)/(bullets-1)))
@@ -250,7 +275,7 @@ func _shoot_logic():
 					"direction": final_dir,
 					"from_enemy": false,
 					"damage": base_damage,
-					"speed": 950.0 if not has_range_up else 1200.0,
+					"speed": BULLET_SPEED if not has_range_up else BULLET_SPEED_EXTENDED,
 					"position": global_position + weapon_pivot.position + final_dir * 20.0
 				})
 			if b and has_bouncy:
@@ -269,7 +294,7 @@ func add_xp(amount):
 	if current_xp >= xp_to_next_level: _level_up()
 
 func _level_up():
-	current_level += 1; current_xp -= xp_to_next_level; xp_to_next_level *= 1.4
+	current_level += 1; current_xp -= xp_to_next_level; xp_to_next_level *= XP_GROWTH
 	if _gm: _gm.run_stats.level = current_level; _gm.run_stats.xp = current_xp
 	# 升级音效
 	var audio = get_node_or_null("/root/AudioManager")
@@ -368,13 +393,13 @@ func _fire_bullet_hell():
 					"color": Color(0.5, 0.8, 1.0),
 					"direction": dir,
 					"from_enemy": false,
-					"damage": 15.0,
-					"speed": 600.0,
+					"damage": BULLET_HELL_DAMAGE,
+					"speed": BULLET_HELL_SPEED,
 					"position": global_position
 				})
 
 func _find_nearest_enemy():
-	var nearest: Node2D = null; var min_dist = 600.0
+	var nearest: Node2D = null; var min_dist = ENEMY_SEARCH_RANGE
 	# 优先使用空间网格查询
 	var combat_scene = get_parent()  # player 的父节点就是 combat_system
 	if combat_scene and combat_scene.has_method("get_enemy_grid"):
@@ -398,14 +423,14 @@ func _perform_dash():
 	is_dashing = true; can_dash = false
 	set_collision_mask_value(3, false)  # 禁用敌人碰撞层
 	var dash_dir = velocity.normalized() if velocity.length() > 10 else Vector2.from_angle(weapon_pivot.rotation)
-	velocity = dash_dir * 1100.0; visual_container.rotation = dash_dir.angle()
+	velocity = dash_dir * DASH_SPEED; visual_container.rotation = dash_dir.angle()
 	var tw = create_tween().set_parallel(true); visual_container.scale = Vector2(2.0, 0.5); tw.tween_property(visual_container, "scale", Vector2.ONE, 0.45).set_trans(Tween.TRANS_QUINT)
-	# 无敌帧持续0.2秒
-	await get_tree().create_timer(0.2).timeout
+	# 无敌帧持续 DASH_DURATION 秒
+	await get_tree().create_timer(DASH_DURATION).timeout
 	if not is_instance_valid(self): return  # 防止节点已释放
 	set_collision_mask_value(3, true)  # 恢复敌人碰撞层
 	is_dashing = false
-	await get_tree().create_timer(0.5).timeout  # 冲刺冷却
+	await get_tree().create_timer(DASH_COOLDOWN).timeout  # 冲刺冷却
 	if not is_instance_valid(self): return  # 防止节点已释放
 	can_dash = true
 
@@ -464,8 +489,16 @@ func _die():
 	for tw in _active_tweens:
 		if is_instance_valid(tw): tw.kill()
 	_active_tweens.clear()
+	# 先收集本局数据，再重置
+	var run_summary = {
+		"level": current_level,
+		"perks_count": _gm.run_stats.perks.size() if _gm else 0,
+		"highest_wave": _gm.highest_wave if _gm else 0,
+	}
 	if _gm: _gm.reset_run_stats()
-	var h = get_tree().get_first_node_in_group("hud"); if h: h.show_game_over({})
+	var h = get_tree().get_first_node_in_group("hud")
+	if h:
+		h.show_game_over(run_summary)
 
 func revive():
 	is_alive = true; current_hp = max_hp; visible = true; set_physics_process(true); collision_layer = 2; collision_mask = 5

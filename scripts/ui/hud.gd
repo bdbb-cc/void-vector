@@ -248,8 +248,27 @@ func update_level_progress(n, c, g):
 		xp_bar.max_value = _player.xp_to_next_level; xp_bar.value = _player.current_xp
 
 func update_stone_count(c): stone_label.text = "混沌碎片: %d" % c
-func show_game_over(_d):
+func show_game_over(run_data: Dictionary):
 	perk_overlay.visible = false # 死亡关闭升级
+	# 更新死亡画面显示本局统计
+	var stats_label = death_screen.get_node_or_null("StatsLabel")
+	if not stats_label:
+		stats_label = Label.new()
+		stats_label.name = "StatsLabel"
+		stats_label.add_theme_font_size_override("font_size", 18)
+		stats_label.add_theme_color_override("font_color", Color(0.7, 0.7, 0.7))
+		stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		# 插入到死亡标题和按钮之间
+		var d_v = death_screen.get_child(1).get_child(0)  # CenterContainer > VBoxContainer
+		if d_v is VBoxContainer and d_v.get_child_count() > 1:
+			d_v.add_child(stats_label)
+			d_v.move_child(stats_label, 1)
+	if stats_label and not run_data.is_empty():
+		stats_label.text = "等级 %d | 天赋 %d | 最高波次 %d" % [
+			run_data.get("level", 1),
+			run_data.get("perks_count", 0),
+			run_data.get("highest_wave", 0)
+		]
 	death_screen.visible = true
 	death_screen.modulate.a = 0.0
 	UIAnimations.fade_in(death_screen, 0.5)

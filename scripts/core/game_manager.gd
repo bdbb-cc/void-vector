@@ -88,6 +88,16 @@ func get_boosted_stats():
 	var speed_per_level = 45.0
 	var fire_rate_base = 1.0
 	var fire_rate_per_level = 0.2
+	var attack_base = 35.0
+	var attack_per_level = 5.0
+	var defense_base = 0.0
+	var defense_per_level = 2.0
+	var crit_rate_base = 0.05
+	var crit_rate_per_level = 0.03
+	var pickup_range_base = 50.0
+	var pickup_range_per_level = 25.0
+	var luck_base = 0.0
+	var luck_per_level = 0.1
 
 	# 尝试从配置读取基础值
 	if meta_upgrades.has("max_hp"):
@@ -99,11 +109,31 @@ func get_boosted_stats():
 	if meta_upgrades.has("fire_rate"):
 		fire_rate_base = float(meta_upgrades["fire_rate"].get("base_value", fire_rate_base))
 		fire_rate_per_level = float(meta_upgrades["fire_rate"].get("per_level", fire_rate_per_level))
+	if meta_upgrades.has("attack"):
+		attack_base = float(meta_upgrades["attack"].get("base_value", attack_base))
+		attack_per_level = float(meta_upgrades["attack"].get("per_level", attack_per_level))
+	if meta_upgrades.has("defense"):
+		defense_base = float(meta_upgrades["defense"].get("base_value", defense_base))
+		defense_per_level = float(meta_upgrades["defense"].get("per_level", defense_per_level))
+	if meta_upgrades.has("crit_rate"):
+		crit_rate_base = float(meta_upgrades["crit_rate"].get("base_value", crit_rate_base))
+		crit_rate_per_level = float(meta_upgrades["crit_rate"].get("per_level", crit_rate_per_level))
+	if meta_upgrades.has("pickup_range"):
+		pickup_range_base = float(meta_upgrades["pickup_range"].get("base_value", pickup_range_base))
+		pickup_range_per_level = float(meta_upgrades["pickup_range"].get("per_level", pickup_range_per_level))
+	if meta_upgrades.has("luck"):
+		luck_base = float(meta_upgrades["luck"].get("base_value", luck_base))
+		luck_per_level = float(meta_upgrades["luck"].get("per_level", luck_per_level))
 
 	return {
 		"hp": hp_base + (meta_upgrades.get("max_hp", {}).get("level", 0) * hp_per_level),
 		"speed": speed_base + (meta_upgrades.get("speed", {}).get("level", 0) * speed_per_level),
-		"fire_rate": fire_rate_base + (meta_upgrades.get("fire_rate", {}).get("level", 0) * fire_rate_per_level)
+		"fire_rate": fire_rate_base + (meta_upgrades.get("fire_rate", {}).get("level", 0) * fire_rate_per_level),
+		"attack": attack_base + (meta_upgrades.get("attack", {}).get("level", 0) * attack_per_level),
+		"defense": defense_base + (meta_upgrades.get("defense", {}).get("level", 0) * defense_per_level),
+		"crit_rate": crit_rate_base + (meta_upgrades.get("crit_rate", {}).get("level", 0) * crit_rate_per_level),
+		"pickup_range": pickup_range_base + (meta_upgrades.get("pickup_range", {}).get("level", 0) * pickup_range_per_level),
+		"luck": luck_base + (meta_upgrades.get("luck", {}).get("level", 0) * luck_per_level)
 	}
 
 func get_upgrade_cost(key): return int(meta_upgrades[key]["base_cost"] * pow(1.8, meta_upgrades[key]["level"]))

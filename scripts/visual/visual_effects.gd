@@ -8,6 +8,15 @@ var _shader_cache: Dictionary = {}
 var _material_cache: Dictionary = {}
 var _player_ref: Node2D
 var _hit_stop_active := false
+var particles_enabled: bool = true  # 粒子效果开关（设置面板控制）
+var _bloom_enabled: bool = true  # Bloom 效果开关
+
+func set_bloom_enabled(enabled: bool) -> void:
+	_bloom_enabled = enabled
+	# 切换 WorldEnvironment 的 glow 效果
+	var env = get_viewport().world_3d.environment if get_viewport().world_3d else null
+	if env:
+		env.glow_enabled = enabled
 
 func _ready() -> void:
 	name = "VisualEffects"

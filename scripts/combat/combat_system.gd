@@ -232,6 +232,12 @@ func _create_nodes():
 	var remote = RemoteTransform2D.new(); remote.remote_path = camera.get_path(); player.add_child(remote)
 	enemy_container = Node2D.new(); enemy_container.name = "Enemies"; add_child(enemy_container)
 	hud = HudScript.new(); hud.name = "HUD"; hud.add_to_group("hud"); add_child(hud)
+	# 虚拟摇杆（移动端触屏输入）
+	var VirtualJoystickScript = load("res://scripts/ui/virtual_joystick.gd")
+	var joystick = VirtualJoystickScript.new()
+	joystick.name = "VirtualJoystick"
+	joystick.joystick_input.connect(player.set_virtual_input)
+	hud.add_child(joystick)
 	# 装备选择界面（保留备用）
 	equip_ui = EquipmentChoiceUIScript.new(); equip_ui.name = "EquipUI"; add_child(equip_ui)
 	equip_ui.equipment_chosen.connect(_on_equipment_auto_equip)
